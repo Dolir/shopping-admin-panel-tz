@@ -66,7 +66,7 @@ export default createStore({
       const requiredProduct = requiredSession.products.find(
         (product) => product.name === payload.name
       )
-      requiredProduct.quantity += 1
+      requiredProduct.quantity = parseInt(requiredProduct.quantity) +1
     },
     decrementItem(state, payload) {
       const requiredSession = state.sessions.find(
